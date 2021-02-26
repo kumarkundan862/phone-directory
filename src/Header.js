@@ -5,6 +5,7 @@ import './Header.css';
 //this is functional component
 const Header = function(){
 
+    
     // const headerStyle = {
     //     textAlign: 'center',
     //     padding: 20,
