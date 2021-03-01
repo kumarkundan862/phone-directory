@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from "./Header";
-import "./App.css";
+import "./ShowSubscribers.css";
 
 
 // let demoArray = [
@@ -16,16 +16,32 @@ import "./App.css";
 //   }
 // ];
 
-class App extends Component {
+class ShowSubscribers extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      subscriberListToShow: []
-    }
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     subscriberListToShow: []
+  //   }
+  //   console.log("constructor called");
+  // }
+
+  // componentDidMount(){
+  //   let newSubscriber = {
+  //     id: 1,
+  //     name:"kundan",
+  //     phone:"9999999999"
+  //   }
+
+  //   let subscriberList = this.state.subscriberListToShow;
+  //   subscriberList.push(newSubscriber);
+  //   this.setState({subscriberListToShow:subscriberList});
+  //   console.log("Component Did Mount called");
+  //   console.log("State",this.state);
+  // }
 
   render() {
+    console.log("Rendered called");
     return (
       <div>
         <Header heading="phone directory" />
@@ -39,10 +55,11 @@ class App extends Component {
 
           {
             //demoArray.map(sub =>{
-            this.state.subscriberListToShow.map(sub => {
+            //this.state.subscriberListToShow.map(sub => {
+              this.props.subscribersList.map(sub => {
               return <div key={sub.id} className="grid-container">
-                <span className="grid-item">{sub.prop1}</span>
-                <span className="grid-item">{sub.prop2}</span>
+                <span className="grid-item">{sub.name}</span>
+                <span className="grid-item">{sub.phone}</span>
                 <span className="grid-item action-btn-container">
                   <button className="custom-btn delete-btn">Delete</button>
                 </span>
@@ -58,4 +75,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ShowSubscribers;
